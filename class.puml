@@ -1,0 +1,72 @@
+@startuml
+
+' ===========================
+' ENUMS
+' ===========================
+enum StatutCredit {
+  EN_COURS
+  ACCEPTE
+  REJETE
+}
+
+enum TypeRemboursement {
+  MENSUALITE
+  REMBOURSEMENT_ANTICIPE
+}
+
+enum TypeBienImmobilier {
+  APPARTEMENT
+  MAISON
+  LOCAL_COMMERCIAL
+}
+
+' ===========================
+' CLASSES
+' ===========================
+class Client {
+  Long id
+  String nom
+  String email
+}
+
+abstract class Credit {
+  Long id
+  LocalDate dateDemande
+  StatutCredit statut
+  LocalDate dateAcception
+  Double montant
+  Integer dureeRemboursement
+  Double tauxInteret
+}
+
+class CreditPersonnel {
+  String motif
+}
+
+class CreditImmobilier {
+  TypeBienImmobilier typeBien
+}
+
+class CreditProfessionnel {
+  String motif
+  String raisonSociale
+}
+
+class Remboursement {
+  Long id
+  LocalDate date
+  Double montant
+  TypeRemboursement type
+}
+
+' ===========================
+' RELATIONS
+' ===========================
+Client "1" -- "0..*" Credit : effectue >
+Credit "1" -- "0..*" Remboursement : rembourse >
+
+Credit <|-- CreditPersonnel
+Credit <|-- CreditImmobilier
+Credit <|-- CreditProfessionnel
+
+@enduml
