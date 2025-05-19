@@ -1,5 +1,7 @@
 package mohamed.hakim.backend.controllers;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import mohamed.hakim.backend.dtos.CreditDto;
 import mohamed.hakim.backend.dtos.CreditImmobilierDto;
 import mohamed.hakim.backend.dtos.CreditPersonnelDto;
@@ -30,15 +32,6 @@ public class CreditController {
         return ResponseEntity.ok(creditService.getCreditById(id));
     }
 
-    @PostMapping
-    public ResponseEntity<CreditDto> createCredit(@RequestBody CreditDto creditDto) {
-        return ResponseEntity.ok(creditService.createCredit(creditDto));
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<CreditDto> updateCredit(@PathVariable Long id, @RequestBody CreditDto creditDto) {
-        return ResponseEntity.ok(creditService.updateCredit(id, creditDto));
-    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCredit(@PathVariable Long id) {

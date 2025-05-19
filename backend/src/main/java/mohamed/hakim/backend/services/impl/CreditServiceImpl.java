@@ -59,24 +59,6 @@ public class CreditServiceImpl implements CreditService {
     }
 
     @Override
-    public CreditDto updateCredit(Long id, CreditDto creditDto) {
-        return creditRepository.findById(id)
-                .map(existingCredit -> {
-                    if (creditDto instanceof CreditImmobilierDto dto) {
-                        creditMapper.updateCreditFromDto(dto, (CreditImmobilier) existingCredit);
-                    } else if (creditDto instanceof CreditPersonnelDto dto) {
-                        creditMapper.updateCreditFromDto(dto, (CreditPersonnel) existingCredit);
-                    } else if (creditDto instanceof CreditProfessionnelDto dto) {
-                        creditMapper.updateCreditFromDto(dto, (CreditProfessionnel) existingCredit);
-                    } else {
-                        throw new RuntimeException("Unknown credit type");
-                    }
-                    return creditMapper.toCreditDto(creditRepository.save(existingCredit));
-                })
-                .orElseThrow(() -> new RuntimeException("Credit not found"));
-    }
-
-    @Override
     public void deleteCredit(Long id) {
         creditRepository.findById(id)
                 .ifPresentOrElse(credit -> {
