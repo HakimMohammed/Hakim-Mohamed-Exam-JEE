@@ -1,5 +1,6 @@
 package mohamed.hakim.backend.dtos;
 
+import lombok.Data;
 import lombok.Value;
 import mohamed.hakim.backend.enums.StatutCredit;
 
@@ -9,8 +10,8 @@ import java.time.LocalDate;
 /**
  * DTO for {@link mohamed.hakim.backend.entities.CreditProfessionnel}
  */
-@Value
-public class CreditProfessionnelDto implements Serializable {
+@Data
+public class CreditProfessionnelDto extends CreditDto {
     Long id;
     LocalDate dateDemande;
     StatutCredit statut;

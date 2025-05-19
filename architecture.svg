@@ -1,0 +1,79 @@
+<svg width="1000" height="850" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .title { font-family: Arial; font-size: 18px; font-weight: bold; fill: #2c3e50; }
+        .layer-title { font-family: Arial; font-size: 16px; font-weight: bold; fill: #2980b9; }
+        .box { fill: #ecf0f1; stroke: #2980b9; stroke-width: 2; rx: 10; ry: 10; }
+        .label { font-family: Arial; font-size: 14px; fill: #2c3e50; font-weight: normal; }
+        .arrow { stroke: #2980b9; stroke-width: 2; marker-end: url(#arrowhead); }
+    </style>
+
+    <!-- Arrowhead Definition -->
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                refX="10" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#2980b9"/>
+        </marker>
+    </defs>
+
+    <!-- FRONTEND -->
+    <text x="50" y="40" class="title">Frontend (Angular)</text>
+    <rect x="30" y="50" width="250" height="100" class="box"/>
+    <text x="50" y="75" class="label">• Components & Routing</text>
+    <text x="50" y="95" class="label">• HTTP Interceptors (JWT)</text>
+    <text x="50" y="115" class="label">• Services & UI</text>
+
+    <!-- BACKEND -->
+    <text x="350" y="40" class="title">Backend (Spring Boot)</text>
+    <rect x="330" y="50" width="640" height="550" class="box"/>
+
+    <!-- Web Layer -->
+    <text x="350" y="80" class="layer-title">Web Layer</text>
+    <rect x="340" y="90" width="200" height="80" class="box"/>
+    <text x="360" y="110" class="label">• REST Controllers</text>
+    <text x="360" y="130" class="label">• DTO Mapping</text>
+
+    <!-- Service Layer -->
+    <text x="570" y="80" class="layer-title">Service Layer</text>
+    <rect x="560" y="90" width="200" height="80" class="box"/>
+    <text x="580" y="110" class="label">• Business Logic</text>
+    <text x="580" y="130" class="label">• Interfaces & Impl</text>
+
+    <!-- Data Access Layer -->
+    <text x="790" y="80" class="layer-title">Data Access</text>
+    <rect x="780" y="90" width="200" height="80" class="box"/>
+    <text x="800" y="110" class="label">• JPA Repositories</text>
+    <text x="800" y="130" class="label">• Entities & Relations</text>
+
+    <!-- Security Layer -->
+    <text x="350" y="190" class="layer-title">Security</text>
+    <rect x="340" y="200" width="640" height="80" class="box"/>
+    <text x="360" y="225" class="label">• Spring Security</text>
+    <text x="360" y="245" class="label">• JWT Authentication</text>
+    <text x="600" y="225" class="label">• Roles: CLIENT, EMPLOYEE, ADMIN</text>
+    <text x="600" y="245" class="label">• Secured Endpoints</text>
+
+    <!-- Utilities Layer -->
+    <text x="350" y="300" class="layer-title">Utilities</text>
+    <rect x="340" y="310" width="640" height="80" class="box"/>
+    <text x="360" y="335" class="label">• Swagger / OpenAPI</text>
+    <text x="360" y="355" class="label">• Validation & Logging</text>
+    <text x="600" y="335" class="label">• Exception Handling</text>
+    <text x="600" y="355" class="label">• Data Seeding</text>
+
+    <!-- DATABASE -->
+    <text x="50" y="180" class="title">Database</text>
+    <rect x="30" y="190" width="250" height="120" class="box"/>
+    <text x="50" y="215" class="label">• H2 or MySQL</text>
+    <text x="50" y="235" class="label">• Tables:</text>
+    <text x="50" y="255" class="label">  - Client</text>
+    <text x="50" y="275" class="label">  - Credit</text>
+    <text x="50" y="295" class="label">  - Remboursement</text>
+
+    <!-- Arrows Between Layers -->
+    <!-- Frontend to Backend -->
+    <line x1="160" y1="150" x2="160" y2="200" class="arrow"/>
+    <!-- Backend to DB -->
+    <line x1="160" y1="310" x2="160" y2="370" class="arrow"/>
+    <!-- Security to Backend -->
+    <line x1="650" y1="280" x2="650" y2="310" class="arrow"/>
+</svg>
